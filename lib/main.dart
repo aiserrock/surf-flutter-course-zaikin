@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +22,13 @@ class MyApp extends StatelessWidget {
 class MyFirstWidget extends StatelessWidget {
   MyFirstWidget({Key? key}) : super(key: key);
 
-  int _counter = 0;
-
   @override
   Widget build(BuildContext context) {
-    print(++_counter);
+    dynamic foo() {
+      return context.runtimeType;
+    }
+
+    print('this is foo:${foo()}');
     return const Scaffold(
       body: Center(
         child: Text('Hello!'),
@@ -43,11 +45,13 @@ class MySecondWidget extends StatefulWidget {
 }
 
 class _MySecondWidgetState extends State<MySecondWidget> {
-  int _counter = 0;
+  dynamic foo() {
+    return context.runtimeType;
+  }
 
   @override
   Widget build(BuildContext context) {
-    print(++_counter);
+    print('this is foo:${foo()}');
     return const Scaffold(
       body: Center(
         child: Text('Hello!'),
