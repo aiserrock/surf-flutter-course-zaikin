@@ -14,21 +14,16 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MySecondWidget(),
+      home: const MySecondWidget(),
     );
   }
 }
 
 class MyFirstWidget extends StatelessWidget {
-  MyFirstWidget({Key? key}) : super(key: key);
+  const MyFirstWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    dynamic foo() {
-      return context.runtimeType;
-    }
-
-    print('this is foo:${foo()}');
     return const Scaffold(
       body: Center(
         child: Text('Hello!'),
@@ -45,17 +40,16 @@ class MySecondWidget extends StatefulWidget {
 }
 
 class _MySecondWidgetState extends State<MySecondWidget> {
-  dynamic foo() {
-    return context.runtimeType;
-  }
-
   @override
   Widget build(BuildContext context) {
-    print('this is foo:${foo()}');
     return const Scaffold(
       body: Center(
         child: Text('Hello!'),
       ),
     );
+  }
+
+  dynamic foo() {
+    return context.runtimeType;
   }
 }
