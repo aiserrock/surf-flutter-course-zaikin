@@ -17,12 +17,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  surf_lint_rules: ^1.5.0
+  dart_code_metrics: ^4.12.0
 
-flutter:
-  uses-material-design: true
+fonts:
+  - family: Roboto
     fonts:
-      - family: Roboto
-        fonts:
-          - asset: res/fonts/Roboto.ttf
-            weight: 300
+      - asset: assets/fonts/
