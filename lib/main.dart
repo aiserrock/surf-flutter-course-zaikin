@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/screen/sight_list_screen.dart';
 
 void main() {
   runApp(const App());
@@ -14,42 +15,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MySecondWidget(),
+      home: const SightListScreen(),
     );
-  }
-}
-
-class MyFirstWidget extends StatelessWidget {
-  const MyFirstWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Hello!'),
-      ),
-    );
-  }
-}
-
-class MySecondWidget extends StatefulWidget {
-  const MySecondWidget({Key? key}) : super(key: key);
-
-  @override
-  _MySecondWidgetState createState() => _MySecondWidgetState();
-}
-
-class _MySecondWidgetState extends State<MySecondWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Hello!'),
-      ),
-    );
-  }
-
-  dynamic foo() {
-    return context.runtimeType;
   }
 }
