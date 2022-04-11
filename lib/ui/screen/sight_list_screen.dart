@@ -8,6 +8,13 @@ class SightListScreen extends StatefulWidget {
 }
 
 class _SightListScreenState extends State<SightListScreen> {
+  final baseTextStyle = const TextStyle(
+    color: Colors.black,
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.w700,
+    fontSize: 32,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,19 +22,31 @@ class _SightListScreenState extends State<SightListScreen> {
         toolbarHeight: 40,
         elevation: 0,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        bottom: const PreferredSize(
-          preferredSize: Size.fromHeight(76),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(76),
           child: Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                'Cписок \nинтересных мест',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w700,
-                  fontSize: 32,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'C',
+                      style: baseTextStyle.copyWith(color: Colors.green),
+                    ),
+                    const TextSpan(
+                      text: 'писок \n',
+                    ),
+                    TextSpan(
+                      text: 'и',
+                      style: baseTextStyle.copyWith(color: Colors.yellow),
+                    ),
+                    const TextSpan(
+                      text: 'нтересных мест',
+                    ),
+                  ],
+                  style: baseTextStyle,
                 ),
               ),
             ),
