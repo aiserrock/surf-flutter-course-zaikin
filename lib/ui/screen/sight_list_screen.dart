@@ -22,7 +22,7 @@ class _SightListScreenState extends State<SightListScreen> {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'Cписок \nинтересных мест',
+                'Cписок\nинтересных мест',
                 style: TextStyle(
                   color: Colors.black,
                   fontFamily: 'Roboto',
