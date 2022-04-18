@@ -71,7 +71,7 @@ class Description extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           Text(
-            'Воронежский областной\nкраеведческий музей',
+            'Воронежский областной краеведческий музей',
             style: TextStyle(
               color: Colors.black,
               fontFamily: 'Roboto',
