@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/text_styles.dart';
 
+/// Карточка места
 class SightCard extends StatelessWidget {
   final String type;
 
@@ -29,12 +32,7 @@ class SightCard extends StatelessWidget {
                   left: 16,
                   child: Text(
                     type,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 14,
-                    ),
+                    style: StyleRes.bold14White,
                   ),
                 ),
               ],
@@ -49,6 +47,7 @@ class SightCard extends StatelessWidget {
   }
 }
 
+/// виджет текстового описания для карточки
 class Description extends StatelessWidget {
   const Description({
     Key? key,
@@ -60,7 +59,7 @@ class Description extends StatelessWidget {
       height: 92,
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Color.fromRGBO(245, 245, 245, 1),
+        color: ColorRes.cardBackground,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(16),
           bottomRight: Radius.circular(16),
@@ -69,27 +68,17 @@ class Description extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text(
             'Воронежский областной краеведческий музей',
-            style: TextStyle(
-              color: Colors.black,
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.w500,
-              fontSize: 16,
-            ),
+            style: StyleRes.medium16,
           ),
-          SizedBox(
+          const SizedBox(
             height: 2,
           ),
           Text(
             'краткое описание',
-            style: TextStyle(
-              color: Color.fromRGBO(124, 126, 146, 1),
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.w400,
-              fontSize: 14,
-            ),
+            style: StyleRes.regular14,
           ),
         ],
       ),

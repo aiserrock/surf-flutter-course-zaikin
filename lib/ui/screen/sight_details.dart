@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/res/text_styles.dart';
 
+/// Экран детальной информации о месте
 class SightDetails extends StatelessWidget {
   const SightDetails({Key? key}) : super(key: key);
 
@@ -23,13 +25,9 @@ class SightDetails extends StatelessWidget {
                   const SizedBox(
                     height: 24,
                   ),
-                  const Text(
+                  Text(
                     'Пряности и радости',
-                    style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 24,
-                    ),
+                    style: StyleRes.bold24,
                   ),
                   const SizedBox(
                     height: 2,

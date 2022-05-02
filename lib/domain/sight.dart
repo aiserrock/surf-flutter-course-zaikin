@@ -1,3 +1,4 @@
+/// Класс сонержажщий информацию о интересующем месте
 class Sight {
   final String name;
   final double lat;
