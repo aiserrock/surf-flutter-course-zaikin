@@ -11,7 +11,7 @@ final List<Sight> mocks = <Sight>[
         '!3b1!8m2!3d51.6683487!4d39.1919288!3m4!1s0x413b28c99eb2154d:0x3382a4a3cfbe62b5!8m2!3d51.70'
         '6868!4d39.1722504',
     details: 'Котенок  Ул. Лизюкова details',
-    type: 'type',
+    type: 'музей',
   ),
   Sight(
     name: 'Kорабль-музей Гото Предестинация',
@@ -23,7 +23,7 @@ final List<Sight> mocks = <Sight>[
         'Oblast,+Russia!3b1!8m2!3d51.6683487!4d39.1919288!3m4!1s0x413b2e50622e11ef'
         ':0xcdff31c2ccaf75bb!8m2!3d51.6559298!4d39.2159674',
     details: 'Kорабль-музей Гото Предестинация details',
-    type: 'type',
+    type: 'ресторан',
   ),
   Sight(
     name: 'Воронежский зоопарк им. А.С.Попова.',
@@ -34,6 +34,6 @@ final List<Sight> mocks = <Sight>[
         '0x48d94c0efba762bd!2sVoronezh,+Voronezh+Oblast,+Russia!3b1!8m2!3d51.6683487!'
         '4d39.1919288!3m4!1s0x413b2e3b2d18edd7:0xa5e371b6b67feb0e!8m2!3d51.6401407!4d39.2439366',
     details: 'Воронежский зоопарк им. А.С.Попова. details',
-    type: 'type',
+    type: 'парк',
   ),
 ];

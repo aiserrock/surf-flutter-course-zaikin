@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/text_styles.dart';
 
+/// Карточка места
 class SightCard extends StatelessWidget {
-  final String type;
+  final Sight sight;
 
-  const SightCard({Key? key, required this.type}) : super(key: key);
+  const SightCard({Key? key, required this.sight}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,21 +31,13 @@ class SightCard extends StatelessWidget {
                 Positioned(
                   top: 16,
                   left: 16,
-                  child: Text(
-                    type,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 14,
-                    ),
-                  ),
+                  child: Text(sight.type, style: StyleRes.bold14White),
                 ),
               ],
             ),
           ),
-          const Expanded(
-            child: Description(),
+          Expanded(
+            child: Description(sight: sight),
           ),
         ],
       ),
@@ -49,10 +45,14 @@ class SightCard extends StatelessWidget {
   }
 }
 
+/// виджет текстового описания для карточки
 class Description extends StatelessWidget {
   const Description({
     Key? key,
+    required this.sight,
   }) : super(key: key);
+
+  final Sight sight;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class Description extends StatelessWidget {
       height: 92,
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Color.fromRGBO(245, 245, 245, 1),
+        color: ColorRes.cardBackground,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(16),
           bottomRight: Radius.circular(16),
@@ -69,34 +69,17 @@ class Description extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text(
-            'Воронежский областной\nкраеведческий музей',
-            style: TextStyle(
-              color: Colors.black,
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.w500,
-              fontSize: 16,
-            ),
-          ),
-          SizedBox(
-            height: 2,
-          ),
-          Text(
-            'краткое описание',
-            style: TextStyle(
-              color: Color.fromRGBO(124, 126, 146, 1),
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.w400,
-              fontSize: 14,
-            ),
-          ),
+        children: [
+          Text(sight.name, style: StyleRes.medium16),
+          const SizedBox(height: 2),
+          Text(sight.details, style: StyleRes.regular14),
         ],
       ),
     );
   }
 }
 
+/// Временная картинка заглушка
 class CustomImage extends StatelessWidget {
   const CustomImage({
     Key? key,
