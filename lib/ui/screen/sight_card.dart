@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/text_styles.dart';
 
 /// Карточка места
 class SightCard extends StatelessWidget {
-  final String type;
+  final Sight sight;
 
-  const SightCard({Key? key, required this.type}) : super(key: key);
+  const SightCard({Key? key, required this.sight}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +31,13 @@ class SightCard extends StatelessWidget {
                 Positioned(
                   top: 16,
                   left: 16,
-                  child: Text(
-                    type,
-                    style: StyleRes.bold14White,
-                  ),
+                  child: Text(sight.type, style: StyleRes.bold14White),
                 ),
               ],
             ),
           ),
-          const Expanded(
-            child: Description(),
+          Expanded(
+            child: Description(sight: sight),
           ),
         ],
       ),
@@ -51,7 +49,10 @@ class SightCard extends StatelessWidget {
 class Description extends StatelessWidget {
   const Description({
     Key? key,
+    required this.sight,
   }) : super(key: key);
+
+  final Sight sight;
 
   @override
   Widget build(BuildContext context) {
@@ -69,23 +70,16 @@ class Description extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Воронежский областной краеведческий музей',
-            style: StyleRes.medium16,
-          ),
-          const SizedBox(
-            height: 2,
-          ),
-          Text(
-            'краткое описание',
-            style: StyleRes.regular14,
-          ),
+          Text(sight.name, style: StyleRes.medium16),
+          const SizedBox(height: 2),
+          Text(sight.details, style: StyleRes.regular14),
         ],
       ),
     );
   }
 }
 
+/// Временная картинка заглушка
 class CustomImage extends StatelessWidget {
   const CustomImage({
     Key? key,
