@@ -1,10 +1,21 @@
 class Sight {
-  String name;
-  double lat;
-  double lon;
-  String url;
-  String details;
-  String type;
+  /// Название объекта
+  final String name;
+
+  /// Ширина
+  final double lat;
+
+  /// Долгота
+  final double lon;
+
+  /// uri
+  final String url;
+
+  /// описание
+  final String details;
+
+  /// тип достопремечательности
+  final String type;
 
   Sight({
     required this.name,
