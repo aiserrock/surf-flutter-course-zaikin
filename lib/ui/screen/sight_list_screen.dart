@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/screen/sight_card.dart';
 
 class SightListScreen extends StatefulWidget {
   const SightListScreen({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _SightListScreenState extends State<SightListScreen> {
       appBar: AppBar(
         toolbarHeight: 40,
         elevation: 0,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Colors.white,
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(76),
           child: Align(
@@ -34,8 +35,24 @@ class _SightListScreenState extends State<SightListScreen> {
           ),
         ),
       ),
-      body: const Center(
-        child: Text('Hello!'),
+      backgroundColor: Colors.white,
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(children: const [
+              SightCard(type: 'музей'),
+              SizedBox(
+                height: 16,
+              ),
+              SightCard(type: 'категория'),
+              SizedBox(
+                height: 16,
+              ),
+              SightCard(type: 'дом'),
+            ]),
+          ),
+        ),
       ),
       resizeToAvoidBottomInset: false,
     );
