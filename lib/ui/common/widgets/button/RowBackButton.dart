@@ -20,10 +20,7 @@ class RowBackButton extends StatelessWidget {
               width: 32,
               child: IconButton(
                 onPressed: () => Navigator.pop(context),
-                icon: const SizedBox(
-                  height: 32,
-                  width: 32,
-                ),
+                icon: const SizedBox(height: 32, width: 32),
               ),
             ),
           ],

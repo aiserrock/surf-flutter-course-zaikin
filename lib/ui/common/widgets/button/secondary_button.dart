@@ -35,9 +35,7 @@ class SecondaryButton extends StatelessWidget {
                     height: 24,
                     color: Colors.yellow,
                   ),
-                  const SizedBox(
-                    width: 8,
-                  ),
+                  const SizedBox(width: 8),
                   Text(title),
                 ],
               ),
