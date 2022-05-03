@@ -1,5 +1,6 @@
 import 'package:places/domain/sight.dart';
 
+/// замоканные интересные места
 final List<Sight> mocks = <Sight>[
   Sight(
     name: 'Котенок С Ул. Лизюкова',
