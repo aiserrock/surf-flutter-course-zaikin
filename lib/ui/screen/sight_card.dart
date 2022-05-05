@@ -11,35 +11,38 @@ class SightCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 188,
-      child: Column(
-        children: [
-          Expanded(
-            child: Stack(
-              children: [
-                const CustomImage(),
-                Positioned(
-                  right: 16,
-                  top: 16,
-                  child: Container(
-                    width: 24,
-                    height: 24,
-                    color: Colors.white,
+    return AspectRatio(
+      aspectRatio: 3 / 2,
+      child: SizedBox(
+        height: 188,
+        child: Column(
+          children: [
+            Expanded(
+              child: Stack(
+                children: [
+                  const CustomImage(),
+                  Positioned(
+                    right: 16,
+                    top: 16,
+                    child: Container(
+                      width: 24,
+                      height: 24,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                Positioned(
-                  top: 16,
-                  left: 16,
-                  child: Text(sight.type, style: StyleRes.bold14White),
-                ),
-              ],
+                  Positioned(
+                    top: 16,
+                    left: 16,
+                    child: Text(sight.type, style: StyleRes.bold14White),
+                  ),
+                ],
+              ),
             ),
-          ),
-          Expanded(
-            child: Description(sight: sight),
-          ),
-        ],
+            Expanded(
+              child: Description(sight: sight),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -57,7 +60,6 @@ class Description extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 92,
       width: double.infinity,
       decoration: const BoxDecoration(
         color: ColorRes.cardBackground,
@@ -88,7 +90,6 @@ class CustomImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 96,
       decoration: const BoxDecoration(
         color: Colors.blueAccent,
         borderRadius: BorderRadius.only(
