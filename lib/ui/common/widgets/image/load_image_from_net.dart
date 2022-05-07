@@ -10,6 +10,7 @@ class LoadImageFromNet extends StatelessWidget {
 
   final String url;
 
+  /// https://api.flutter.dev/flutter/widgets/Image/loadingBuilder.html
   @override
   Widget build(BuildContext context) {
     return Image.network(
