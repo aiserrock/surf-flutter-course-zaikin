@@ -4,11 +4,11 @@ class StringRes {
   static const appBarTitle = 'Cписок интересных мест';
 
   /// sight_details_screen
-  static const book = 'Забранировать',
-      addFavorite = 'Забранировать',
+  static const book = 'Запланировать',
+      addFavorite = 'В Избранное',
 
       /// временный текст для главной кнопки
-      primaryButtonText = 'Primary Button Text',
+      buildRoute = 'ПОСТРОИТЬ МАРШРУТ',
 
       /// Закрыто до (временный текст)
       closedBefore = 'закрыто до 09:00';
