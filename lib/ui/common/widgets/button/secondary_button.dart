@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 /// Второстепенная кнопка в рамках всего приложения
 class SecondaryButton extends StatelessWidget {
   final String title;
-  final IconData? icon;
+  final String icon;
+  final TextStyle? textStyle;
+  final Color? iconColor;
 
   const SecondaryButton({
     Key? key,
     required this.title,
-    this.icon,
+    required this.icon,
+    this.iconColor,
+    this.textStyle,
   }) : super(key: key);
 
   @override
@@ -30,13 +35,9 @@ class SecondaryButton extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    width: 24,
-                    height: 24,
-                    color: Colors.yellow,
-                  ),
+                  SvgPicture.asset(icon, color: iconColor),
                   const SizedBox(width: 8),
-                  Text(title),
+                  Text(title, style: textStyle),
                 ],
               ),
             ),

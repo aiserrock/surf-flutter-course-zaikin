@@ -3,7 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class ColorRes {
-  static const Color cardBackground = _cardBackground, secondaryText = _secondaryText;
+  static const Color cardBackground = _cardBackground,
+      secondaryText = _secondaryText;
 
   const ColorRes._();
 }

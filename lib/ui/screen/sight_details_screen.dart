@@ -3,9 +3,10 @@ import 'package:places/domain/sight.dart';
 import 'package:places/ui/common/widgets/button/RowBackButton.dart';
 import 'package:places/ui/common/widgets/button/primary_button.dart';
 import 'package:places/ui/common/widgets/button/secondary_button.dart';
+import 'package:places/ui/common/widgets/image/load_image_from_net.dart';
+import 'package:places/ui/res/assets.dart';
 import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/text_styles.dart';
-
 
 class SightDetailsScreen extends StatelessWidget {
   const SightDetailsScreen({
@@ -21,7 +22,10 @@ class SightDetailsScreen extends StatelessWidget {
       body: Stack(children: [
         Column(
           children: [
-            const SizedBox(height: 360, child: Placeholder()),
+            SizedBox(
+              height: 360,
+              child: LoadImageFromNet(url: sight.url),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
@@ -40,14 +44,28 @@ class SightDetailsScreen extends StatelessWidget {
                   const SizedBox(height: 24),
                   Text(sight.details),
                   const SizedBox(height: 24),
-                  const PrimaryButton(text: StringRes.primaryButtonText),
+                  PrimaryButton(
+                    text: StringRes.buildRoute,
+                    textStyle: StyleRes.bold14White,
+                    icon: IconRes.icGo,
+                  ),
                   const SizedBox(height: 24),
                   const Divider(),
                   const SizedBox(height: 8),
                   Row(
-                    children: const [
-                      SecondaryButton(title: StringRes.book),
-                      SecondaryButton(title: StringRes.addFavorite),
+                    children: [
+                      SecondaryButton(
+                        title: StringRes.book,
+                        textStyle:
+                            StyleRes.regular14.copyWith(color: Colors.black.withOpacity(0.56)),
+                        icon: IconRes.icCalendar,
+                      ),
+                      SecondaryButton(
+                        title: StringRes.addFavorite,
+                        textStyle: StyleRes.regular14,
+                        icon: IconRes.icHeart,
+                        iconColor: Colors.black,
+                      ),
                     ],
                   ),
                 ],

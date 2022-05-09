@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/common/widgets/image/load_image_from_net.dart';
+import 'package:places/ui/res/assets.dart';
 import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/text_styles.dart';
 
 /// Карточка места
@@ -20,15 +24,11 @@ class SightCard extends StatelessWidget {
             Expanded(
               child: Stack(
                 children: [
-                  const CustomImage(),
+                  CustomImage(sight: sight),
                   Positioned(
                     right: 16,
                     top: 16,
-                    child: Container(
-                      width: 24,
-                      height: 24,
-                      color: Colors.white,
-                    ),
+                    child: SvgPicture.asset(IconRes.icHeart),
                   ),
                   Positioned(
                     top: 16,
@@ -74,7 +74,10 @@ class Description extends StatelessWidget {
         children: [
           Text(sight.name, style: StyleRes.medium16),
           const SizedBox(height: 2),
-          Text(sight.details, style: StyleRes.regular14),
+          Text(
+            StringRes.closedBefore,
+            style: StyleRes.regular14.copyWith(color: ColorRes.secondaryText),
+          ),
         ],
       ),
     );
@@ -84,17 +87,23 @@ class Description extends StatelessWidget {
 /// Временная картинка заглушка
 class CustomImage extends StatelessWidget {
   const CustomImage({
+    required this.sight,
     Key? key,
   }) : super(key: key);
 
+  final Sight sight;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Colors.blueAccent,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
+    return ClipRRect(
+      borderRadius: const BorderRadius.only(
+        topLeft: Radius.circular(16),
+        topRight: Radius.circular(16),
+      ),
+      child: AspectRatio(
+        aspectRatio: 3,
+        child: LoadImageFromNet(
+          url: sight.url,
         ),
       ),
     );
