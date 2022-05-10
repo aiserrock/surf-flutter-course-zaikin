@@ -10,12 +10,15 @@ class StringRes {
       /// временный текст для главной кнопки
       buildRoute = 'ПОСТРОИТЬ МАРШРУТ',
 
-      /// табы на экране visiting screen
-      wantVisit = 'Хочу посетить',
-      visited = 'Посетил',
-
       /// Закрыто до (временный текст)
       closedBefore = 'закрыто до 09:00';
+
+  /// Экран visiting_screen
+  static const wantVisit = 'Хочу посетить',
+      emptyHeaderText = 'Пусто',
+      emptyFavoritePlacesText = 'Отмечайте понравившиеся места и они появиятся здесь.',
+      emptyVisitedPlacesText = 'Завершите маршрут, чтобы место попало сюда.',
+      visited = 'Посетил';
 
   StringRes._();
 }
