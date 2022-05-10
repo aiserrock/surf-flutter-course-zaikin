@@ -24,7 +24,8 @@ class StyleRes {
         fontWeight: FontWeight.w500,
         fontFamily: 'roboto-medium',
       ),
-      medium16 = _medium.copyWith(fontSize: 16.0);
+      medium16 = _medium.copyWith(fontSize: 16.0),
+      medium18 = _medium.copyWith(fontSize: 18.0);
 
   ///bold
   static final _bold = _text.copyWith(
