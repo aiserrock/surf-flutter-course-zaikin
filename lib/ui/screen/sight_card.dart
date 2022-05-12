@@ -9,9 +9,12 @@ import 'package:places/ui/res/text_styles.dart';
 
 /// Карточка места
 class SightCard extends StatelessWidget {
-  final Sight sight;
+  const SightCard({
+    Key? key,
+    required this.sight,
+  }) : super(key: key);
 
-  const SightCard({Key? key, required this.sight}) : super(key: key);
+  final Sight sight;
 
   @override
   Widget build(BuildContext context) {

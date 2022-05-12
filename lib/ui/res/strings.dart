@@ -1,5 +1,7 @@
 /// Файл со строковыми ресурсами
 class StringRes {
+  StringRes._();
+
   /// апп бар
   static const appBarTitle = 'Cписок интересных мест';
 
@@ -19,6 +21,4 @@ class StringRes {
       emptyFavoritePlacesText = 'Отмечайте понравившиеся места и они появиятся здесь.',
       emptyVisitedPlacesText = 'Завершите маршрут, чтобы место попало сюда.',
       visited = 'Посетил';
-
-  StringRes._();
 }

@@ -1,5 +1,14 @@
 /// Класс сонержажщий информацию о интересующем месте
 class Sight {
+  Sight({
+    required this.name,
+    required this.lat,
+    required this.lon,
+    required this.url,
+    required this.details,
+    required this.type,
+  });
+
   /// Название объекта
   final String name;
 
@@ -17,13 +26,4 @@ class Sight {
 
   /// тип достопремечательности
   final String type;
-
-  Sight({
-    required this.name,
-    required this.lat,
-    required this.lon,
-    required this.url,
-    required this.details,
-    required this.type,
-  });
 }

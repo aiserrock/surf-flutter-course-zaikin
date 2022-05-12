@@ -3,11 +3,11 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class ColorRes {
+  const ColorRes._();
+
   static const Color cardBackground = _cardBackground,
       tabBackground = _tabBackground,
       secondaryText = _secondaryText;
-
-  const ColorRes._();
 }
 
 /// Основная палитра для places (http://www.color-blindness.com/color-name-hue/)

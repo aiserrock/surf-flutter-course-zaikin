@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
-import 'package:places/ui/common/widgets/appBar/places_app_bar.dart';
-import 'package:places/ui/res/strings.dart';
-import 'package:places/ui/res/text_styles.dart';
+import 'package:places/ui/common/widgets/app_bar/places_app_bar.dart';
 import 'package:places/ui/screen/sight_card.dart';
 
 /// Экран скарточками "Интересные места"

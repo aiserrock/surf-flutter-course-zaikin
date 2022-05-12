@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:places/mocks.dart';
-import 'package:places/ui/screen/sight_details_screen.dart';
-import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
 
 void main() {
@@ -20,7 +17,7 @@ class App extends StatelessWidget {
       ),
       // home: SightDetailsScreen(sight: mocks.first),
       // home: const SightListScreen(),
-      home: VisitingScreen(),
+      home: const VisitingScreen(),
     );
   }
 }

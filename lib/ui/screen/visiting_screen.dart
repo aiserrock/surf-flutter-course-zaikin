@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:places/ui/common/widgets/tabBar/visiting_screen_tabbar.dart';
-import 'package:places/ui/res/colors.dart';
-import 'package:places/ui/res/strings.dart';
+import 'package:places/ui/common/widgets/bottom_navigation_bar/custom_bottom_bar.dart';
+import 'package:places/ui/common/widgets/tab_bar/visiting_screen_tabbar.dart';
 import 'package:places/ui/res/text_styles.dart';
 
 class VisitingScreen extends StatefulWidget {
@@ -17,6 +16,7 @@ class _VisitingScreenState extends State<VisitingScreen> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        extendBody: true,
         appBar: AppBar(
           title: Text(
             'Избранное',
@@ -37,6 +37,7 @@ class _VisitingScreenState extends State<VisitingScreen> {
           ],
         ),
         backgroundColor: Colors.white,
+        bottomNavigationBar: const CustomBottomBar(current: 3),
       ),
     );
   }

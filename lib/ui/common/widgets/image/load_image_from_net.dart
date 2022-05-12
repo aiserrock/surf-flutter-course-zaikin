@@ -3,7 +3,7 @@ import 'package:places/ui/res/assets.dart';
 
 /// Виджет для загрузки карттинок из сети
 class LoadImageFromNet extends StatelessWidget {
-  LoadImageFromNet({
+  const LoadImageFromNet({
     Key? key,
     required this.url,
   }) : super(key: key);
