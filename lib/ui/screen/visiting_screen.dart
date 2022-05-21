@@ -26,7 +26,7 @@ class _VisitingScreenState extends State<VisitingScreen> {
         extendBody: true,
         appBar: AppBar(
           title: Text(
-            'Избранное',
+            StringRes.favoritesHeader,
             style: StyleRes.medium18,
           ),
           bottom: const PreferredSize(
@@ -56,47 +56,7 @@ class _VisitingScreenState extends State<VisitingScreen> {
   }
 }
 
-/// информация когда карточек нет в разделе
-class EmptyScreen extends StatelessWidget {
-  const EmptyScreen({
-    required this.icon,
-    required this.header,
-    required this.text,
-    Key? key,
-  }) : super(key: key);
-  final String icon;
-  final String header;
-  final String text;
 
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        height:MediaQuery.of(context).size.height/3,
-        child: Column(
-          children: [
-            SvgPicture.asset(icon, color: ColorRes.secondaryText, height: 64),
-            const SizedBox(height: 24),
-            Text(
-              header,
-              textAlign: TextAlign.center,
-              style: StyleRes.medium18.copyWith(color: ColorRes.secondaryText),
-            ),
-            const SizedBox(height: 8),
-            ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 180),
-              child: Text(
-                text,
-                textAlign: TextAlign.center,
-                style: StyleRes.regular14.copyWith(color: ColorRes.secondaryText),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 /// строим карточки для таба Избранное
 /// в зависимости от типа (хочу посетить/посетил)
@@ -127,6 +87,48 @@ Widget _buildCardsInFavouriteTab({
   }
 
   return favTabBarView;
+}
+
+/// информация когда карточек нет в разделе
+class EmptyScreen extends StatelessWidget {
+  const EmptyScreen({
+    required this.icon,
+    required this.header,
+    required this.text,
+    Key? key,
+  }) : super(key: key);
+  final String icon;
+  final String header;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height / 3,
+        child: Column(
+          children: [
+            SvgPicture.asset(icon, color: ColorRes.secondaryText, height: 64),
+            const SizedBox(height: 24),
+            Text(
+              header,
+              textAlign: TextAlign.center,
+              style: StyleRes.medium18.copyWith(color: ColorRes.secondaryText),
+            ),
+            const SizedBox(height: 8),
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 180),
+              child: Text(
+                text,
+                textAlign: TextAlign.center,
+                style: StyleRes.regular14.copyWith(color: ColorRes.secondaryText),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 /// пустые данные для экранов в табе

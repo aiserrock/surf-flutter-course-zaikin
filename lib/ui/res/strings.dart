@@ -17,6 +17,7 @@ class StringRes {
 
   /// Экран visiting_screen
   static const wantVisitTab = 'Хочу посетить',
+      favoritesHeader = 'Избранное',
       visitedTab = 'Посетил',
       dataPlanned = 'Запланировано на',
       dataVisited = 'Цель достигнута',

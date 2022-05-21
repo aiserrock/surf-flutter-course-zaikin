@@ -20,7 +20,7 @@ class Sight {
   /// Долгота
   final double lon;
 
-  /// uri
+  /// img uri
   final String imgPreview;
 
   /// описание

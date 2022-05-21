@@ -5,6 +5,38 @@ import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/text_styles.dart';
 
+/// Экран со списком карточке
+class BuildCardScreen extends StatelessWidget {
+  const BuildCardScreen({
+    Key? key,
+    required this.sights,
+    required this.cardType,
+  }) : super(key: key);
+
+  /// Список интересных мест
+  final List<Sight> sights;
+
+  /// К какому разделу принадлежит карточка
+  final CardType cardType;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            for (var sight in sights) ...[
+              SightCard(sight: sight, cardType: cardType),
+              const SizedBox(height: 16),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 /// Карточка места
 class SightCard extends StatelessWidget {
   const SightCard({
@@ -44,6 +76,7 @@ class SightCard extends StatelessWidget {
   }
 }
 
+/// название типа интересного места
 class PlaceType extends StatelessWidget {
   const PlaceType({
     Key? key,
@@ -84,38 +117,6 @@ class CustomImage extends StatelessWidget {
   }
 }
 
-/// Экран со списком карточке
-class BuildCardScreen extends StatelessWidget {
-  const BuildCardScreen({
-    Key? key,
-    required this.sights,
-    required this.cardType,
-  }) : super(key: key);
-
-  /// Список интересных мест
-  final List<Sight> sights;
-
-  /// К какому разделу принадлежит карточка
-  final CardType cardType;
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            for (var sight in sights) ...[
-              SightCard(sight: sight, cardType: cardType),
-              const SizedBox(height: 16),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 /// actions button
 /// наполнение зависит от типа карточки
 class CardActions extends StatelessWidget {
@@ -127,16 +128,16 @@ class CardActions extends StatelessWidget {
   /// тип карты
   final CardType cardType;
 
-  static const _search = <Widget>[Icon(Icons.favorite_border,color: Colors.white)],
+  static const _search = <Widget>[Icon(Icons.favorite_border, color: Colors.white)],
       _planned = <Widget>[
-        Icon(Icons.calendar_today,color: Colors.white),
+        Icon(Icons.calendar_today, color: Colors.white),
         SizedBox(width: 16),
-        Icon(Icons.close,color: Colors.white),
+        Icon(Icons.close, color: Colors.white),
       ],
       _visited = <Widget>[
         Icon(Icons.share, color: Colors.white),
         SizedBox(width: 16),
-        Icon(Icons.close,color: Colors.white),
+        Icon(Icons.close, color: Colors.white),
       ];
 
   @override
