@@ -16,9 +16,11 @@ class StringRes {
       closedBefore = 'закрыто до 09:00';
 
   /// Экран visiting_screen
-  static const wantVisit = 'Хочу посетить',
+  static const wantVisitTab = 'Хочу посетить',
+      visitedTab = 'Посетил',
+      dataPlanned = 'Запланировано на',
+      dataVisited = 'Цель достигнута',
       emptyHeaderText = 'Пусто',
       emptyFavoritePlacesText = 'Отмечайте понравившиеся места и они появиятся здесь.',
-      emptyVisitedPlacesText = 'Завершите маршрут, чтобы место попало сюда.',
-      visited = 'Посетил';
+      emptyVisitedPlacesText = 'Завершите маршрут, чтобы место попало сюда.';
 }

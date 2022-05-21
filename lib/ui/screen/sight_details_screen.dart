@@ -3,7 +3,7 @@ import 'package:places/domain/sight.dart';
 import 'package:places/ui/common/widgets/button/RowBackButton.dart';
 import 'package:places/ui/common/widgets/button/primary_button.dart';
 import 'package:places/ui/common/widgets/button/secondary_button.dart';
-import 'package:places/ui/common/widgets/image/load_image_from_net.dart';
+import 'package:places/ui/common/widgets/image_loader/load_image_from_net.dart';
 import 'package:places/ui/res/assets.dart';
 import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/text_styles.dart';
@@ -24,7 +24,7 @@ class SightDetailsScreen extends StatelessWidget {
           children: [
             SizedBox(
               height: 360,
-              child: LoadImageFromNet(url: sight.url),
+              child: LoadImageFromNet(url: sight.imgPreview),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),

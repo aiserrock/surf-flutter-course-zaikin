@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:places/domain/sight.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/common/widgets/app_bar/places_app_bar.dart';
+import 'package:places/ui/common/widgets/bottom_navigation_bar/custom_bottom_bar.dart';
 import 'package:places/ui/screen/sight_card.dart';
 
 /// Экран скарточками "Интересные места"
@@ -17,21 +19,9 @@ class _SightListScreenState extends State<SightListScreen> {
     return Scaffold(
       appBar: const PlacesAppBar(),
       backgroundColor: Colors.white,
-      body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(children: [
-              SightCard(sight: mocks.first),
-              const SizedBox(height: 16),
-              SightCard(sight: mocks[1]),
-              const SizedBox(height: 16),
-              SightCard(sight: mocks[2]),
-            ]),
-          ),
-        ),
-      ),
+      body: BuildCardScreen(sights: mocks, cardType: CardType.search),
       resizeToAvoidBottomInset: false,
+      bottomNavigationBar: const CustomBottomBar(current: 0),
     );
   }
 }

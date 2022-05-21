@@ -34,8 +34,8 @@ class VisitingScreenTabBar extends StatelessWidget {
             indicatorColor: Colors.transparent,
             indicatorWeight: 0.0001,
             tabs: const [
-              Tab(text: StringRes.wantVisit),
-              Tab(text: StringRes.visited),
+              Tab(text: StringRes.wantVisitTab),
+              Tab(text: StringRes.visitedTab),
             ],
           ),
         ),

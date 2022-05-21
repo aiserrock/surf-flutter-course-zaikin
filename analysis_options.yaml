@@ -38,21 +38,21 @@ dart_code_metrics:
           - named-constructors
           - factory-constructors
           - constructors
-          - private-static-const-fields
           - public-static-const-fields
           - public-static-final-fields
           - public-static-fields
-          - private-static-fields
           - public-final-fields
-          - private-final-fields
           - public-fields
+          - public-static-methods
           - public-getters-setters
+          - private-static-const-fields
+          - private-static-fields
+          - private-final-fields
           - private-fields
           - private-getters-setters
           - overridden-methods
-          - public-static-methods
-          - public-methods
           - protected-methods
+          - public-methods
           - private-static-methods
           - private-methods
 
