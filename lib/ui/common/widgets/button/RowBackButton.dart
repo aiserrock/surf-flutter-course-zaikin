@@ -21,9 +21,11 @@ class RowBackButton extends StatelessWidget {
               height: 32,
               width: 32,
               child: IconButton(
-                padding: const EdgeInsets.all(0),
+                padding: EdgeInsets.zero,
                 onPressed: () => Navigator.pop(context),
-                icon: SvgPicture.asset(IconRes.icArrowBack,),
+                icon: SvgPicture.asset(
+                  IconRes.icArrowBack,
+                ),
               ),
             ),
           ],

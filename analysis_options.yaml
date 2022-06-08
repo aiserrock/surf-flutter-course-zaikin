@@ -31,9 +31,35 @@ dart_code_metrics:
     - prefer-conditional-expressions
     - prefer-intl-name
     - provide-correct-intl-args
+    - avoid-returning-widgets: false
+    - member-ordering-extended:
+        alphabetize: false
+        order:
+          - named-constructors
+          - factory-constructors
+          - constructors
+          - public-static-const-fields
+          - public-static-final-fields
+          - public-static-fields
+          - public-final-fields
+          - public-fields
+          - public-static-methods
+          - public-getters-setters
+          - private-static-const-fields
+          - private-static-fields
+          - private-final-fields
+          - private-fields
+          - private-getters-setters
+          - overridden-methods
+          - protected-methods
+          - public-methods
+          - private-static-methods
+          - private-methods
 
 linter:
   rules:
     public_member_api_docs: false
     always_put_required_named_parameters_first: false
     always_use_package_imports: true
+    avoid_multiple_declarations_per_line: fasle
+    avoid-returning-widgets: false

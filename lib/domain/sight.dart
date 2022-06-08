@@ -1,5 +1,17 @@
 /// Класс сонержажщий информацию о интересующем месте
 class Sight {
+  Sight({
+    required this.name,
+    required this.lat,
+    required this.lon,
+    required this.imgPreview,
+    required this.uri,
+    required this.details,
+    required this.type,
+    this.cardType,
+    this.date,
+  });
+
   /// Название объекта
   final String name;
 
@@ -9,8 +21,10 @@ class Sight {
   /// Долгота
   final double lon;
 
-  /// uri
-  final String url;
+  /// img uri
+  final String imgPreview;
+
+  final String uri;
 
   /// описание
   final String details;
@@ -18,12 +32,21 @@ class Sight {
   /// тип достопремечательности
   final String type;
 
-  Sight({
-    required this.name,
-    required this.lat,
-    required this.lon,
-    required this.url,
-    required this.details,
-    required this.type,
-  });
+  /// тип карточки
+  final CardType? cardType;
+
+  /// дата посещения
+  final String? date;
+}
+
+/// Тип карточки, соответствует экрану, где расположена карточка
+enum CardType {
+  /// картачка используется в mainTab на экране поиска интересных мест
+  search,
+
+  /// картачка используется в favoriteTab экран запланированных к посещению интересных мест
+  planned,
+
+  /// картачка используется в favoriteTab экран посещенных интересных мест
+  visited,
 }

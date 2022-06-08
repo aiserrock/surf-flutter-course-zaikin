@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 /// Стили текстов
 class StyleRes {
+  const StyleRes._();
+
   static const TextStyle _text = TextStyle(
     fontStyle: FontStyle.normal,
     color: Colors.black,
@@ -24,7 +26,8 @@ class StyleRes {
         fontWeight: FontWeight.w500,
         fontFamily: 'roboto-medium',
       ),
-      medium16 = _medium.copyWith(fontSize: 16.0);
+      medium16 = _medium.copyWith(fontSize: 16.0),
+      medium18 = _medium.copyWith(fontSize: 18.0);
 
   ///bold
   static final _bold = _text.copyWith(
@@ -32,8 +35,7 @@ class StyleRes {
         fontFamily: 'roboto-bold',
       ),
       bold14White = _bold.copyWith(fontSize: 14, color: Colors.white),
+      bold14 = _bold.copyWith(fontSize: 14),
       bold24 = _bold.copyWith(fontSize: 24),
       bold32 = _bold.copyWith(fontSize: 32);
-
-  const StyleRes._();
 }

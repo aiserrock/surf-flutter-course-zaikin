@@ -3,10 +3,11 @@ import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/text_styles.dart';
 
 class PlacesAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const PlacesAppBar({Key? key}) : super(key: key);
+
   @override
   Size get preferredSize => const Size.fromHeight(92);
 
-  const PlacesAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

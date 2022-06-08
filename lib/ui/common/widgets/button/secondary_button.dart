@@ -3,11 +3,6 @@ import 'package:flutter_svg/svg.dart';
 
 /// Второстепенная кнопка в рамках всего приложения
 class SecondaryButton extends StatelessWidget {
-  final String title;
-  final String icon;
-  final TextStyle? textStyle;
-  final Color? iconColor;
-
   const SecondaryButton({
     Key? key,
     required this.title,
@@ -15,6 +10,11 @@ class SecondaryButton extends StatelessWidget {
     this.iconColor,
     this.textStyle,
   }) : super(key: key);
+
+  final String title;
+  final String icon;
+  final TextStyle? textStyle;
+  final Color? iconColor;
 
   @override
   Widget build(BuildContext context) {
