@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/ui/res/assets.dart';
+import 'package:places/ui/res/strings.dart';
 
 class CustomBottomBar extends StatelessWidget {
   const CustomBottomBar({
@@ -23,22 +24,22 @@ class CustomBottomBar extends StatelessWidget {
         BottomNavigationBarItem(
           // backgroundColor: Colors.white,
           icon: SvgPicture.asset(IconRes.icList),
-          label: 'Список',
+          label: StringRes.bottomBarListTitle,
         ),
         BottomNavigationBarItem(
           // backgroundColor: Colors.white,
           icon: SvgPicture.asset(IconRes.icMap),
-          label: 'Карта',
+          label: StringRes.bottomBarMapTitle,
         ),
         BottomNavigationBarItem(
           // backgroundColor: Colors.white,
           icon: SvgPicture.asset(IconRes.icHeartFull),
-          label: 'Избранное',
+          label: StringRes.bottomBarFavoritesTitle,
         ),
         BottomNavigationBarItem(
           // backgroundColor: Colors.white,
           icon: SvgPicture.asset(IconRes.icSettings),
-          label: 'Настройки',
+          label: StringRes.bottomBarSettingsTitle,
         ),
       ],
     );

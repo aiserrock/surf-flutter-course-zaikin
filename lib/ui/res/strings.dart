@@ -5,6 +5,12 @@ class StringRes {
   /// апп бар
   static const appBarTitle = 'Cписок интересных мест';
 
+  /// bottomBar
+  static const bottomBarListTitle = 'Список',
+      bottomBarFavoritesTitle = 'Избранное',
+      bottomBarSettingsTitle = 'Настройки',
+      bottomBarMapTitle = 'Карта';
+
   /// sight_details_screen
   static const book = 'Запланировать',
       addFavorite = 'В Избранное',

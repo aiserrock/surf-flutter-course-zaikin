@@ -5,6 +5,7 @@ class Sight {
     required this.lat,
     required this.lon,
     required this.imgPreview,
+    required this.uri,
     required this.details,
     required this.type,
     this.cardType,
@@ -22,6 +23,8 @@ class Sight {
 
   /// img uri
   final String imgPreview;
+
+  final String uri;
 
   /// описание
   final String details;
