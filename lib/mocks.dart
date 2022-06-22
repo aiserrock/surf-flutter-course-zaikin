@@ -1,3 +1,5 @@
+// ignore_for_file: leading_newlines_in_multiline_strings
+
 import 'package:places/domain/sight.dart';
 
 /// замоканные интересные места
@@ -62,7 +64,7 @@ final List<Sight> mocks = <Sight>[
     date: '10 апр. 2022',
   ),
   Sight(
-    name: 'Ярославский государственный историко-архитектурный и художественный музей-заповедник',
+    name: 'Ярославский музей-заповедник',
     lat: 51.6520658,
     lon: 39.2384338,
     imgPreview:

@@ -16,7 +16,7 @@ class RowBackButton extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
+                color: Theme.of(context).primaryColor,
               ),
               height: 32,
               width: 32,
@@ -25,6 +25,7 @@ class RowBackButton extends StatelessWidget {
                 onPressed: () => Navigator.pop(context),
                 icon: SvgPicture.asset(
                   IconRes.icArrowBack,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:places/ui/res/themes.dart';
+
+
 
 /// Главная кнопка в рамках всего приложения
 class PrimaryButton extends StatelessWidget {
@@ -20,7 +23,7 @@ class PrimaryButton extends StatelessWidget {
       height: 48,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: const Color.fromRGBO(76, 175, 80, 1),
+          color: Theme.of(context).colorScheme.green,
           borderRadius: BorderRadius.circular(12.0),
         ),
         child: Material(

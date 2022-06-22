@@ -63,7 +63,11 @@ class SightCard extends StatelessWidget {
               child: Stack(
                 children: [
                   CustomImage(sight: sight),
-                  Positioned(right: 16, top: 16, child: CardActions(cardType: cardType)),
+                  Positioned(
+                    right: 16,
+                    top: 16,
+                    child: CardActions(cardType: cardType),
+                  ),
                   Positioned(top: 16, left: 16, child: PlaceType(sight: sight)),
                 ],
               ),
@@ -128,16 +132,21 @@ class CardActions extends StatelessWidget {
   /// тип карты
   final CardType cardType;
 
-  static const _search = <Widget>[Icon(Icons.favorite_border, color: Colors.white)],
+  static const _search = <Widget>[
+        Icon(
+          Icons.favorite_border,
+          color: ColorRes.colorWhite,
+        ),
+      ],
       _planned = <Widget>[
-        Icon(Icons.calendar_today, color: Colors.white),
+        Icon(Icons.calendar_today, color: ColorRes.colorWhite),
         SizedBox(width: 16),
-        Icon(Icons.close, color: Colors.white),
+        Icon(Icons.close, color: ColorRes.colorWhite),
       ],
       _visited = <Widget>[
-        Icon(Icons.share, color: Colors.white),
+        Icon(Icons.share, color: ColorRes.colorWhite),
         SizedBox(width: 16),
-        Icon(Icons.close, color: Colors.white),
+        Icon(Icons.close, color: ColorRes.colorWhite),
       ];
 
   @override
@@ -170,9 +179,9 @@ class CardTextContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: const BoxDecoration(
-        color: ColorRes.cardBackground,
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColorLight,
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(16),
           bottomRight: Radius.circular(16),
         ),
@@ -183,7 +192,7 @@ class CardTextContent extends StatelessWidget {
         children: [
           Text(
             sight.name,
-            style: StyleRes.medium16,
+            style: Theme.of(context).textTheme.headline5,
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
           ),
@@ -191,7 +200,7 @@ class CardTextContent extends StatelessWidget {
           if (cardType == CardType.search) ...[
             Text(
               sight.details,
-              style: StyleRes.regular14.copyWith(color: ColorRes.secondaryText),
+              style: Theme.of(context).textTheme.bodyText2,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
             ),
@@ -199,7 +208,7 @@ class CardTextContent extends StatelessWidget {
           if (cardType == CardType.planned && sight.date != null) ...[
             Text(
               '${StringRes.dataPlanned} ${sight.date}',
-              style: StyleRes.regular14.copyWith(color: ColorRes.planedText),
+              style: Theme.of(context).primaryTextTheme.bodyText1,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
             ),
@@ -207,7 +216,7 @@ class CardTextContent extends StatelessWidget {
           if (cardType == CardType.visited && sight.date != null) ...[
             Text(
               '${StringRes.dataVisited} ${sight.date}',
-              style: StyleRes.regular14.copyWith(color: ColorRes.secondaryText),
+              style: Theme.of(context).textTheme.bodyText2,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
             ),
@@ -216,7 +225,7 @@ class CardTextContent extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               StringRes.closedBefore,
-              style: StyleRes.regular14.copyWith(color: ColorRes.secondaryText),
+              style: Theme.of(context).textTheme.subtitle1,
             ),
           ],
         ],

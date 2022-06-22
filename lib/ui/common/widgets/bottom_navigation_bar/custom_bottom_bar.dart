@@ -15,30 +15,37 @@ class CustomBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: Colors.white,
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
       currentIndex: current,
-      type: BottomNavigationBarType.fixed,
       items: [
         BottomNavigationBarItem(
-          // backgroundColor: Colors.white,
-          icon: SvgPicture.asset(IconRes.icList),
+          icon: SvgPicture.asset(
+            IconRes.icList,
+            color: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
+          ),
           label: StringRes.bottomBarListTitle,
         ),
         BottomNavigationBarItem(
-          // backgroundColor: Colors.white,
-          icon: SvgPicture.asset(IconRes.icMap),
+          icon: SvgPicture.asset(
+            IconRes.icMap,
+            color:
+                Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
+          ),
           label: StringRes.bottomBarMapTitle,
         ),
         BottomNavigationBarItem(
-          // backgroundColor: Colors.white,
-          icon: SvgPicture.asset(IconRes.icHeartFull),
+          icon: SvgPicture.asset(
+            IconRes.icHeartFull,
+            color:
+                Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
+          ),
           label: StringRes.bottomBarFavoritesTitle,
         ),
         BottomNavigationBarItem(
-          // backgroundColor: Colors.white,
-          icon: SvgPicture.asset(IconRes.icSettings),
+          icon: SvgPicture.asset(
+            IconRes.icSettings,
+            color:
+                Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
+          ),
           label: StringRes.bottomBarSettingsTitle,
         ),
       ],

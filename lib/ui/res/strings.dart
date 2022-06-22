@@ -3,7 +3,7 @@ class StringRes {
   StringRes._();
 
   /// апп бар
-  static const appBarTitle = 'Cписок интересных мест';
+  static const appBarTitle = 'Cписок\nинтересных мест';
 
   /// bottomBar
   static const bottomBarListTitle = 'Список',
