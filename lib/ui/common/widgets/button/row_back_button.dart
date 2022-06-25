@@ -8,6 +8,8 @@ class RowBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(top: 8, left: 15),
@@ -16,7 +18,7 @@ class RowBackButton extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
+                color: theme.primaryColor,
               ),
               height: 32,
               width: 32,
@@ -25,6 +27,7 @@ class RowBackButton extends StatelessWidget {
                 onPressed: () => Navigator.pop(context),
                 icon: SvgPicture.asset(
                   IconRes.icArrowBack,
+                  color: theme.colorScheme.primary,
                 ),
               ),
             ),

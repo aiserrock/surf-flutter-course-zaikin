@@ -2,8 +2,10 @@
 class StringRes {
   StringRes._();
 
+  static const appName = 'places';
+
   /// апп бар
-  static const appBarTitle = 'Cписок интересных мест';
+  static const appBarTitle = 'Cписок\nинтересных мест';
 
   /// bottomBar
   static const bottomBarListTitle = 'Список',

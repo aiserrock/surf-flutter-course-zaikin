@@ -19,13 +19,16 @@ class StyleRes {
 
   /// regular
   static final _regular = _text.copyWith(fontWeight: FontWeight.normal),
-      regular14 = _regular.copyWith(fontSize: 14.0);
+      regular12 = _regular.copyWith(fontSize: 12.0),
+      regular14 = _regular.copyWith(fontSize: 14.0),
+      regular16 = _regular.copyWith(fontSize: 16.0);
 
   ///medium
   static final _medium = _text.copyWith(
         fontWeight: FontWeight.w500,
         fontFamily: 'roboto-medium',
       ),
+      medium12 = _medium.copyWith(fontSize: 12.0),
       medium16 = _medium.copyWith(fontSize: 16.0),
       medium18 = _medium.copyWith(fontSize: 18.0);
 

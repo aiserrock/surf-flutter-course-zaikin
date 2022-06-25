@@ -18,7 +18,7 @@ class _SightListScreenState extends State<SightListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PlacesAppBar(),
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: BuildCardScreen(sights: mocks, cardType: CardType.search),
       resizeToAvoidBottomInset: false,
       bottomNavigationBar: const CustomBottomBar(current: 0),

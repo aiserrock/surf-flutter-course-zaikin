@@ -7,7 +7,6 @@ import 'package:places/ui/common/widgets/tab_bar/visiting_screen_tabbar.dart';
 import 'package:places/ui/res/assets.dart';
 import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/strings.dart';
-import 'package:places/ui/res/text_styles.dart';
 import 'package:places/ui/screen/sight_card.dart';
 
 class VisitingScreen extends StatefulWidget {
@@ -25,17 +24,12 @@ class _VisitingScreenState extends State<VisitingScreen> {
       child: Scaffold(
         extendBody: true,
         appBar: AppBar(
-          title: Text(
-            StringRes.favoritesHeader,
-            style: StyleRes.medium18,
-          ),
+          title: const Text(StringRes.favoritesHeader),
           bottom: const PreferredSize(
             preferredSize: Size.fromHeight(60),
             child: VisitingScreenTabBar(),
           ),
           centerTitle: true,
-          elevation: 0,
-          backgroundColor: Colors.white,
         ),
         body: TabBarView(
           children: [
@@ -49,14 +43,11 @@ class _VisitingScreenState extends State<VisitingScreen> {
             ),
           ],
         ),
-        backgroundColor: Colors.white,
         bottomNavigationBar: const CustomBottomBar(current: 3),
       ),
     );
   }
 }
-
-
 
 /// строим карточки для таба Избранное
 /// в зависимости от типа (хочу посетить/посетил)
@@ -67,11 +58,14 @@ Widget _buildCardsInFavouriteTab({
   Widget favTabBarView;
 
   /// ищем в базе карточки с соответствующим типом
-  final currentSights = sights.where((sight) => sight.cardType == cardType).toList();
+  final currentSights =
+      sights.where((sight) => sight.cardType == cardType).toList();
 
   /// если нет таких, то показываем заглушку
   if (currentSights.isEmpty) {
-    final screenContent = blankScreenContent.where((item) => item['typeCard'] == cardType).toList();
+    final screenContent = blankScreenContent
+        .where((item) => item['typeCard'] == cardType)
+        .toList();
 
     favTabBarView = EmptyScreen(
       icon: screenContent.first['blankScreenIcon'] as String,
@@ -103,17 +97,23 @@ class EmptyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Center(
       child: SizedBox(
         height: MediaQuery.of(context).size.height / 3,
         child: Column(
           children: [
-            SvgPicture.asset(icon, color: ColorRes.secondaryText, height: 64),
+            SvgPicture.asset(
+              icon,
+              color: ColorRes.colorInactiveBlack,
+              height: 64,
+            ),
             const SizedBox(height: 24),
             Text(
               header,
               textAlign: TextAlign.center,
-              style: StyleRes.medium18.copyWith(color: ColorRes.secondaryText),
+              style: theme.primaryTextTheme.headline6,
             ),
             const SizedBox(height: 8),
             ConstrainedBox(
@@ -121,7 +121,7 @@ class EmptyScreen extends StatelessWidget {
               child: Text(
                 text,
                 textAlign: TextAlign.center,
-                style: StyleRes.regular14.copyWith(color: ColorRes.secondaryText),
+                style: theme.primaryTextTheme.bodyText2,
               ),
             ),
           ],
