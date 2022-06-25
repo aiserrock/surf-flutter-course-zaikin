@@ -269,29 +269,91 @@ class AppTheme {
   }
 }
 
-/// most often used color in both themes
-extension CustomColorScheme on ColorScheme {
-  Color get white => ColorRes.colorWhite;
+@immutable
+class CustomColors extends ThemeExtension<CustomColors> {
+  const CustomColors({
+    required this.white,
+    required this.secondary,
+    required this.secondary2,
+    required this.inactiveBlack,
+    required this.green,
+    required this.yellow,
+    required this.green2,
+    required this.yellow2,
+  });
 
-  Color get secondary => ColorRes.colorSecondary;
+  final Color? white;
+  final Color? secondary;
+  final Color? secondary2;
+  final Color? inactiveBlack;
+  final Color? green;
+  final Color? yellow;
+  final Color? green2;
+  final Color? yellow2;
 
-  Color get secondary2 => ColorRes.colorSecondary2;
+  // the light theme
+  static const light = CustomColors(
+    white: ColorRes.colorWhite,
+    secondary: ColorRes.colorSecondary,
+    secondary2: ColorRes.colorSecondary2,
+    inactiveBlack: ColorRes.colorInactiveBlack,
+    green: ColorRes.colorWhiteThemeGreen,
+    yellow: ColorRes.colorWhiteThemeYellow,
+    green2: ColorRes.colorWhiteThemeGreen2,
+    yellow2: ColorRes.colorWhiteThemeYellow2,
+  );
 
-  Color get inactiveBlack => ColorRes.colorInactiveBlack;
+  // the dark theme
+  static const dark = CustomColors(
+    white: ColorRes.colorWhite,
+    secondary: ColorRes.colorSecondary,
+    secondary2: ColorRes.colorSecondary2,
+    inactiveBlack: ColorRes.colorInactiveBlack,
+    green: ColorRes.colorBlackThemeGreen,
+    yellow: ColorRes.colorBlackThemeYellow,
+    green2: ColorRes.colorBlackThemeGreen2,
+    yellow2: ColorRes.colorBlackThemeYellow2,
+  );
 
-  Color get green => brightness == Brightness.light
-      ? ColorRes.colorWhiteThemeGreen
-      : ColorRes.colorBlackThemeGreen;
+  @override
+  CustomColors copyWith({
+    Color? white,
+    Color? secondary,
+    Color? secondary2,
+    Color? inactiveBlack,
+    Color? green,
+    Color? yellow,
+    Color? green2,
+    Color? yellow2,
+  }) {
+    return CustomColors(
+      white: white ?? this.white,
+      secondary: secondary ?? this.secondary,
+      secondary2: secondary2 ?? this.secondary,
+      inactiveBlack: inactiveBlack ?? this.inactiveBlack,
+      green: green ?? this.green,
+      yellow: yellow ?? this.yellow,
+      green2: green2 ?? this.green2,
+      yellow2: yellow2 ?? this.yellow2,
+    );
+  }
 
-  Color get yellow => brightness == Brightness.light
-      ? ColorRes.colorWhiteThemeYellow
-      : ColorRes.colorBlackThemeYellow;
+  // Controls how the properties change on theme changes
+  @override
+  CustomColors lerp(ThemeExtension<CustomColors>? other, double t) {
+    if (other is! CustomColors) {
+      return this;
+    }
 
-  Color get green2 => brightness == Brightness.light
-      ? ColorRes.colorWhiteThemeGreen2
-      : ColorRes.colorBlackThemeGreen2;
-
-  Color get yellow2 => brightness == Brightness.light
-      ? ColorRes.colorWhiteThemeYellow2
-      : ColorRes.colorBlackThemeYellow2;
+    return CustomColors(
+      white: Color.lerp(white, other.white, t),
+      secondary: Color.lerp(secondary, other.secondary, t),
+      secondary2: Color.lerp(secondary2, other.secondary2, t),
+      inactiveBlack: Color.lerp(inactiveBlack, other.inactiveBlack, t),
+      green: Color.lerp(green, other.green, t),
+      yellow: Color.lerp(yellow, other.yellow, t),
+      green2: Color.lerp(green2, other.green2, t),
+      yellow2: Color.lerp(yellow2, other.yellow2, t),
+    );
+  }
 }

@@ -14,37 +14,36 @@ class CustomBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return BottomNavigationBar(
       currentIndex: current,
       items: [
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             IconRes.icList,
-            color: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
+            color: theme.bottomNavigationBarTheme.selectedItemColor,
           ),
           label: StringRes.bottomBarListTitle,
         ),
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             IconRes.icMap,
-            color:
-                Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
+            color: theme.bottomNavigationBarTheme.unselectedItemColor,
           ),
           label: StringRes.bottomBarMapTitle,
         ),
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             IconRes.icHeartFull,
-            color:
-                Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
+            color: theme.bottomNavigationBarTheme.unselectedItemColor,
           ),
           label: StringRes.bottomBarFavoritesTitle,
         ),
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             IconRes.icSettings,
-            color:
-                Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
+            color: theme.bottomNavigationBarTheme.unselectedItemColor,
           ),
           label: StringRes.bottomBarSettingsTitle,
         ),

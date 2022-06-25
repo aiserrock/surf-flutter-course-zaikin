@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:places/mocks.dart';
+import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/themes.dart';
+import 'package:places/ui/screen/sight_details_screen.dart';
+import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
 
 void main() {
@@ -12,11 +16,15 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'places',
-      theme: AppTheme.getLightTheme(),
-      // home: SightDetailsScreen(sight: mocks.first),
+      title: StringRes.appName,
+      theme: AppTheme.getDarkTheme().copyWith(
+        extensions: [
+          CustomColors.dark,
+        ],
+      ),
+      home: SightDetailsScreen(sight: mocks.first),
       // home: const SightListScreen(),
-      home: const VisitingScreen(),
+      // home: const VisitingScreen(),
     );
   }
 }

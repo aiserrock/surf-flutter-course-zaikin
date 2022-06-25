@@ -19,11 +19,13 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final customColors = Theme.of(context).extension<CustomColors>()!;
+
     return SizedBox(
       height: 48,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.green,
+          color: Theme.of(context).extension<CustomColors>()!.green,
           borderRadius: BorderRadius.circular(12.0),
         ),
         child: Material(

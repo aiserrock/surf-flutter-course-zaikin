@@ -97,6 +97,8 @@ class EmptyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Center(
       child: SizedBox(
         height: MediaQuery.of(context).size.height / 3,
@@ -111,7 +113,7 @@ class EmptyScreen extends StatelessWidget {
             Text(
               header,
               textAlign: TextAlign.center,
-              style: Theme.of(context).primaryTextTheme.headline6,
+              style: theme.primaryTextTheme.headline6,
             ),
             const SizedBox(height: 8),
             ConstrainedBox(
@@ -119,7 +121,7 @@ class EmptyScreen extends StatelessWidget {
               child: Text(
                 text,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).primaryTextTheme.bodyText2,
+                style: theme.primaryTextTheme.bodyText2,
               ),
             ),
           ],

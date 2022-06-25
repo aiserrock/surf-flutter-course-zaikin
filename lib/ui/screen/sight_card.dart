@@ -177,10 +177,12 @@ class CardTextContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColorLight,
+        color: theme.primaryColorLight,
         borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(16),
           bottomRight: Radius.circular(16),
@@ -192,7 +194,7 @@ class CardTextContent extends StatelessWidget {
         children: [
           Text(
             sight.name,
-            style: Theme.of(context).textTheme.headline5,
+            style: theme.textTheme.headline5,
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
           ),
@@ -200,7 +202,7 @@ class CardTextContent extends StatelessWidget {
           if (cardType == CardType.search) ...[
             Text(
               sight.details,
-              style: Theme.of(context).textTheme.bodyText2,
+              style: theme.textTheme.bodyText2,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
             ),
@@ -208,7 +210,7 @@ class CardTextContent extends StatelessWidget {
           if (cardType == CardType.planned && sight.date != null) ...[
             Text(
               '${StringRes.dataPlanned} ${sight.date}',
-              style: Theme.of(context).primaryTextTheme.bodyText1,
+              style: theme.primaryTextTheme.bodyText1,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
             ),
@@ -216,7 +218,7 @@ class CardTextContent extends StatelessWidget {
           if (cardType == CardType.visited && sight.date != null) ...[
             Text(
               '${StringRes.dataVisited} ${sight.date}',
-              style: Theme.of(context).textTheme.bodyText2,
+              style: theme.textTheme.bodyText2,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
             ),
@@ -225,7 +227,7 @@ class CardTextContent extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               StringRes.closedBefore,
-              style: Theme.of(context).textTheme.subtitle1,
+              style: theme.textTheme.subtitle1,
             ),
           ],
         ],
