@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/common/widgets/button/button_rounded.dart';
 import 'package:places/ui/common/widgets/button/primary_button.dart';
-import 'package:places/ui/common/widgets/button/row_back_button.dart';
 import 'package:places/ui/common/widgets/button/secondary_button.dart';
 import 'package:places/ui/common/widgets/image_loader/load_image_from_net.dart';
 import 'package:places/ui/res/assets.dart';
@@ -66,6 +66,9 @@ class SightDetailsScreen extends StatelessWidget {
                       text: StringRes.buildRoute,
                       textStyle: StyleRes.bold14White,
                       icon: IconRes.icGo,
+                      onPressed: () {
+                        debugPrint('кнопка построить маршрут');
+                      },
                     ),
                     const SizedBox(height: 24),
                     const Divider(),
@@ -75,16 +78,22 @@ class SightDetailsScreen extends StatelessWidget {
                         SecondaryButton(
                           title: StringRes.book,
                           textStyle: theme.primaryTextTheme.bodyText2,
-                          icon: IconRes.icCalendar,
+                          icon: IconRes.icCalendarGray,
                           iconColor: Theme.of(context)
                               .extension<CustomColors>()!
                               .inactiveBlack,
+                          onPressed: () {
+                            debugPrint('кнопка забукать');
+                          },
                         ),
                         SecondaryButton(
                           title: StringRes.addFavorite,
                           textStyle: theme.textTheme.bodyText1,
                           icon: IconRes.icHeart,
                           iconColor: theme.colorScheme.onPrimary,
+                          onPressed: () {
+                            debugPrint('кнопка добавить в фейворит');
+                          },
                         ),
                       ],
                     ),
@@ -93,7 +102,20 @@ class SightDetailsScreen extends StatelessWidget {
               ),
             ],
           ),
-          const Positioned(top: 12, child: RowBackButton()),
+          Positioned(
+            top: 16,
+            left: 16,
+            child: ButtonRounded(
+              size: 32,
+              radius: 12,
+              backgroundColor: Theme.of(context).primaryColor,
+              iconColor: Theme.of(context).colorScheme.onPrimary,
+              icon: IconRes.icArrowBack,
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ),
         ],
       ),
     );

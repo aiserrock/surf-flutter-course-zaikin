@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/common/widgets/button/icon_action_button.dart';
 import 'package:places/ui/common/widgets/image_loader/load_image_from_net.dart';
-import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/assets.dart';
 import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/text_styles.dart';
 
@@ -132,21 +133,53 @@ class CardActions extends StatelessWidget {
   /// тип карты
   final CardType cardType;
 
-  static const _search = <Widget>[
-        Icon(
-          Icons.favorite_border,
-          color: ColorRes.colorWhite,
+  static final _search = <Widget>[
+        IconActionButton(
+          icon: IconRes.icHeartOutlined,
+          onPressed: () {
+            debugPrint(
+              'search screen/favorite button',
+            );
+          },
         ),
       ],
       _planned = <Widget>[
-        Icon(Icons.calendar_today, color: ColorRes.colorWhite),
-        SizedBox(width: 16),
-        Icon(Icons.close, color: ColorRes.colorWhite),
+        IconActionButton(
+          icon: IconRes.icCalendarWhite,
+          onPressed: () {
+            debugPrint(
+              'planned screen/calendar button',
+            );
+          },
+        ),
+        const SizedBox(width: 16),
+        IconActionButton(
+          icon: IconRes.icClose,
+          onPressed: () {
+            debugPrint(
+              'planned screen/close button',
+            );
+          },
+        ),
       ],
       _visited = <Widget>[
-        Icon(Icons.share, color: ColorRes.colorWhite),
-        SizedBox(width: 16),
-        Icon(Icons.close, color: ColorRes.colorWhite),
+        IconActionButton(
+          icon: IconRes.icShare,
+          onPressed: () {
+            debugPrint(
+              'visited screen/share button',
+            );
+          },
+        ),
+        const SizedBox(width: 16),
+        IconActionButton(
+          icon: IconRes.icClose,
+          onPressed: () {
+            debugPrint(
+              'visited screen/close button',
+            );
+          },
+        ),
       ];
 
   @override

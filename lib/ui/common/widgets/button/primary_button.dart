@@ -9,18 +9,18 @@ class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     Key? key,
     required this.text,
+    required this.onPressed,
     this.textStyle,
     this.icon,
   }) : super(key: key);
 
+  final VoidCallback onPressed;
   final String text;
   final TextStyle? textStyle;
   final String? icon;
 
   @override
   Widget build(BuildContext context) {
-    final customColors = Theme.of(context).extension<CustomColors>()!;
-
     return SizedBox(
       height: 48,
       child: DecoratedBox(
@@ -34,7 +34,7 @@ class PrimaryButton extends StatelessWidget {
             customBorder: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0),
             ),
-            onTap: () {},
+            onTap: onPressed,
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),

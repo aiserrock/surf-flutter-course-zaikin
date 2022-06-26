@@ -17,14 +17,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: StringRes.appName,
-      theme: AppTheme.getDarkTheme().copyWith(
+      theme: AppTheme.getLightTheme().copyWith(
         extensions: [
           CustomColors.dark,
         ],
       ),
-      home: SightDetailsScreen(sight: mocks.first),
+      // home: SightDetailsScreen(sight: mocks.first),
       // home: const SightListScreen(),
-      // home: const VisitingScreen(),
+      home: const VisitingScreen(),
     );
   }
 }
