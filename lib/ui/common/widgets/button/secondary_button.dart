@@ -7,14 +7,17 @@ class SecondaryButton extends StatelessWidget {
     Key? key,
     required this.title,
     required this.icon,
+    required this.onPressed,
     this.iconColor,
     this.textStyle,
+
   }) : super(key: key);
 
   final String title;
   final String icon;
   final TextStyle? textStyle;
   final Color? iconColor;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class SecondaryButton extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {},
+          onTap: onPressed,
           child: SizedBox(
             height: 40,
             child: Padding(
